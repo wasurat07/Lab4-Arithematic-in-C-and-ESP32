@@ -85,6 +85,10 @@ cd projects/08_final_calculator/
 idf.py build
 idf.py qemu monitor
 ```
+## 🚪 วิธีออกจาก Qemu
+``` c
+    หากต้องการออกจาก QEMU monitor ให้กด Ctrl+]
+``` 
 
 ## 🎮 การใช้งาน
 
