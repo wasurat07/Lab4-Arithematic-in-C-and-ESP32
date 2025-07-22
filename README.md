@@ -85,6 +85,9 @@ Lab4 Arithematic in C and ESP32/
 # *** ก่อนอื่นต้องเข้าสู่ Docker Container ก่อน ***
 docker exec -it esp32-lab4 bash
 
+# *** สำคัญ: Setup ESP-IDF environment (ทุกครั้งที่เข้า container ใหม่) ***
+. $IDF_PATH/export.sh
+
 # จากนั้นเข้าสู่โปรเจคที่ต้องการ
 cd projects/01_addition_eggs/
 
@@ -206,10 +209,25 @@ docker exec -it esp32-lab4 sh
 
 ### Build ไม่สำเร็จ:
 ```bash
+# ถ้าพบ "idf.py: command not found"
+. $IDF_PATH/export.sh
+
 # ลบ build cache
 rm -rf build/
 idf.py clean
 idf.py build
+```
+
+### คำสั่ง idf.py ไม่รู้จัก:
+```bash
+# Setup ESP-IDF environment (ต้องทำทุกครั้งที่เข้า container ใหม่)
+. $IDF_PATH/export.sh
+
+# หรือ
+source $IDF_PATH/export.sh
+
+# ตรวจสอบว่า setup สำเร็จ
+idf.py --version
 ```
 
 ### QEMU ไม่รัน:
@@ -224,4 +242,4 @@ idf.py qemu monitor
 
 ## 🎉 ขอให้สนุกกับการเรียนรู้!
 
-เริ่มต้นจากโปรเจคแรก: **[01_addition_eggs](projects/01_addition_eggs/)**
+เริ่มต้นจากโปรเจคแรก: **[01_addition_eggs](projects/01_addition_eggs/README.md)**
