@@ -33,6 +33,12 @@ idf.py build
 idf.py qemu monitor
 ```
 
+## 🚪 วิธีออกจาก Qemu
+``` c
+    หากต้องการออกจาก QEMU monitor ให้กด Ctrl+]
+``` 
+
+
 ## 🎓 ท้าทาย
 
 ลองเปลี่ยนโจทย์:
